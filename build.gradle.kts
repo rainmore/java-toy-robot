@@ -32,6 +32,7 @@ tasks.run.configure {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:${project.properties["junit.version"]!!.toString()}"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-junit-jupiter:${project.properties["mockito-core.version"]!!.toString()}")
 }
 
 tasks.test {

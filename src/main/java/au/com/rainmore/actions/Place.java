@@ -17,8 +17,12 @@ public class Place implements Action {
         return new Place(point, facing);
     }
 
-    public static Place of(Integer x, Integer y, Direction facing) {
-        return of(Point.of(x, y), facing);
+    public Place withFacing(Direction facing) {
+        return of(getPoint(), facing);
+    }
+
+    public Place withPoint(Point point) {
+        return of(point, getFacing());
     }
 
     public Direction getFacing() {

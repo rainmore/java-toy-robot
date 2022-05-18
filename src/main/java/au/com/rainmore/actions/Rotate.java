@@ -3,24 +3,30 @@ package au.com.rainmore.actions;
 import au.com.rainmore.domains.Direction;
 
 import static au.com.rainmore.domains.Direction.*;
+import static au.com.rainmore.domains.Direction.NORTH;
 
-public enum Rotate implements Action {
-    LEFT, RIGHT;
+public abstract class Rotate implements Action {
+
+    public abstract Boolean isLeft();
+
+    public Boolean isRight() {
+        return !isLeft();
+    }
 
     public Direction rotate(Direction direction) {
         Direction rotatedDirection = null;
         switch (direction) {
             case NORTH:
-                rotatedDirection = (this == LEFT) ? WEST : EAST;
+                rotatedDirection = (this.isLeft()) ? WEST : EAST;
                 break;
             case EAST:
-                rotatedDirection = (this == LEFT) ? NORTH : SOUTH;
+                rotatedDirection = (this.isLeft()) ? NORTH : SOUTH;
                 break;
             case SOUTH:
-                rotatedDirection = (this == LEFT) ? EAST : WEST;
+                rotatedDirection = (this.isLeft()) ? EAST : WEST;
                 break;
             case WEST:
-                rotatedDirection = (this == LEFT) ? SOUTH : NORTH;
+                rotatedDirection = (this.isLeft()) ? SOUTH : NORTH;
                 break;
         }
         return rotatedDirection;
