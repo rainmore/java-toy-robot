@@ -57,7 +57,7 @@ public class Robot {
     }
 
     private void actPlace(Place place) {
-        if (table.isValid(place.getPoint())) {
+        if (table.isValid(place.point())) {
             places.add(place);
         }
     }
@@ -65,7 +65,7 @@ public class Robot {
     private void actMove(Move move) {
         Optional<Place> currentPlace = getCurrentPlace();
         if (currentPlace.isPresent()) {
-            Point point = move.move(currentPlace.get().getPoint(), currentPlace.get().getFacing());
+            Point point = move.move(currentPlace.get().point(), currentPlace.get().facing());
             Place place = currentPlace.get().withPoint(point);
             actPlace(place);
         }
@@ -74,7 +74,7 @@ public class Robot {
     private void actRotate(Rotate rotate) {
         Optional<Place> currentPlace = getCurrentPlace();
         if (currentPlace.isPresent()) {
-            Direction newFacing = rotate.rotate(currentPlace.get().getFacing());
+            Direction newFacing = rotate.rotate(currentPlace.get().facing());
             Place place = currentPlace.get().withFacing(newFacing);
             places.add(place);
         }

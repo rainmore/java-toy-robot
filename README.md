@@ -57,7 +57,7 @@ Output: 3,3,NORTH
 
 # Running Environment
 
-JDK 11
+JDK 17
 
 # Run the application
 

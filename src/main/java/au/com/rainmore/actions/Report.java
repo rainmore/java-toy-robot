@@ -11,9 +11,9 @@ public class Report implements Action {
         String message;
         if (currentPlace.isPresent()) {
             message = String.format("Output: %d,%d,%s",
-                    currentPlace.get().getPoint().getX(),
-                    currentPlace.get().getPoint().getY(),
-                    currentPlace.get().getFacing()
+                    currentPlace.get().point().x(),
+                    currentPlace.get().point().y(),
+                    currentPlace.get().facing()
             );
         }
         else {

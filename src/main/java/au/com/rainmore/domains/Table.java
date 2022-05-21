@@ -1,13 +1,7 @@
 package au.com.rainmore.domains;
 
 
-public class Table {
-
-    private final Integer size;
-
-    private Table(Integer size) {
-        this.size = size;
-    }
+public record Table(Integer size) {
 
     public static Table of(Integer size) {
         return new Table(size);
@@ -18,7 +12,7 @@ public class Table {
     }
 
     public Boolean isValid(Point point) {
-        return isValid(point.getX()) && isValid(point.getY());
+        return isValid(point.x()) && isValid(point.y());
     }
 
     private Boolean isValid(Integer integer) {

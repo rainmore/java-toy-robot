@@ -17,20 +17,20 @@ public class MoveSpec extends BaseSpec {
         Point point = Point.of(generateRandomInteger(), generateRandomInteger());
 
         Point point1 = action.move(point, Direction.NORTH);
-        Assertions.assertEquals(point.getX(), point1.getX());
-        Assertions.assertEquals(point.getY() + 1, point1.getY());
+        Assertions.assertEquals(point.x(), point1.x());
+        Assertions.assertEquals(point.y() + 1, point1.y());
 
         Point point2 = action.move(point, Direction.EAST);
-        Assertions.assertEquals(point.getX() + 1, point2.getX());
-        Assertions.assertEquals(point.getY(), point2.getY());
+        Assertions.assertEquals(point.x() + 1, point2.x());
+        Assertions.assertEquals(point.y(), point2.y());
 
         Point point3 = action.move(point, Direction.SOUTH);
-        Assertions.assertEquals(point.getX(), point3.getX());
-        Assertions.assertEquals(point.getY() - 1, point3.getY());
+        Assertions.assertEquals(point.x(), point3.x());
+        Assertions.assertEquals(point.y() - 1, point3.y());
 
         Point point4 = action.move(point, Direction.WEST);
-        Assertions.assertEquals(point.getX() - 1, point4.getX());
-        Assertions.assertEquals(point.getY(), point4.getY());
+        Assertions.assertEquals(point.x() - 1, point4.x());
+        Assertions.assertEquals(point.y(), point4.y());
     }
 
     private Integer generateRandomInteger() {

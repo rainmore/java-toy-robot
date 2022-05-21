@@ -54,7 +54,7 @@ public class RobotSpec extends BaseSpec {
 
         Point point = randomPoint(table.getSize());
 
-        Point invalidPoint = Point.of(point.getX() + table.getSize(), point.getY() + table.getSize());
+        Point invalidPoint = Point.of(point.x() + table.getSize(), point.y() + table.getSize());
         Place invalidPlace = Place.of(invalidPoint, randomDirection());
         robot.act(invalidPlace);
         Assertions.assertTrue(robot.getCurrentPlace().isEmpty());

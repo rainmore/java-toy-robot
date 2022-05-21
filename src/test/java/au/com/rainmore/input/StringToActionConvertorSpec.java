@@ -40,26 +40,26 @@ public class StringToActionConvertorSpec extends BaseSpec {
         String validAction1 = "PLACE 0,0,EAST";
         Assertions.assertTrue(convertor.convert(validAction1) instanceof Place);
         Place place1 = (Place) convertor.convert(validAction1);
-        Assertions.assertEquals(Direction.EAST, place1.getFacing());
-        Assertions.assertEquals(Point.of(0, 0), place1.getPoint());
+        Assertions.assertEquals(Direction.EAST, place1.facing());
+        Assertions.assertEquals(Point.of(0, 0), place1.point());
 
         String validAction2 = "PLACE 1,2,WEST";
         Assertions.assertTrue(convertor.convert(validAction2) instanceof Place);
         Place place2 = (Place) convertor.convert(validAction2);
-        Assertions.assertEquals(Direction.WEST, place2.getFacing());
-        Assertions.assertEquals(Point.of(1, 2), place2.getPoint());
+        Assertions.assertEquals(Direction.WEST, place2.facing());
+        Assertions.assertEquals(Point.of(1, 2), place2.point());
 
         String validAction3 = "PLACE 4,1,NORTH";
         Assertions.assertTrue(convertor.convert(validAction3) instanceof Place);
         Place place3 = (Place) convertor.convert(validAction3);
-        Assertions.assertEquals(Direction.NORTH, place3.getFacing());
-        Assertions.assertEquals(Point.of(4, 1), place3.getPoint());
+        Assertions.assertEquals(Direction.NORTH, place3.facing());
+        Assertions.assertEquals(Point.of(4, 1), place3.point());
 
         String validAction4 = "PLACE 0,9,SOUTH";
         Assertions.assertTrue(convertor.convert(validAction4) instanceof Place);
         Place place4 = (Place) convertor.convert(validAction4);
-        Assertions.assertEquals(Direction.SOUTH, place4.getFacing());
-        Assertions.assertEquals(Point.of(0, 9), place4.getPoint());
+        Assertions.assertEquals(Direction.SOUTH, place4.facing());
+        Assertions.assertEquals(Point.of(0, 9), place4.point());
     }
 
     @Test

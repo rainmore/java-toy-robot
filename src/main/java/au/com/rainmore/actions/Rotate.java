@@ -14,22 +14,12 @@ public abstract class Rotate implements Action {
     }
 
     public Direction rotate(Direction direction) {
-        Direction rotatedDirection = null;
-        switch (direction) {
-            case NORTH:
-                rotatedDirection = (this.isLeft()) ? WEST : EAST;
-                break;
-            case EAST:
-                rotatedDirection = (this.isLeft()) ? NORTH : SOUTH;
-                break;
-            case SOUTH:
-                rotatedDirection = (this.isLeft()) ? EAST : WEST;
-                break;
-            case WEST:
-                rotatedDirection = (this.isLeft()) ? SOUTH : NORTH;
-                break;
-        }
-        return rotatedDirection;
+        return switch (direction) {
+            case NORTH -> (this.isLeft()) ? WEST : EAST;
+            case EAST -> (this.isLeft()) ? NORTH : SOUTH;
+            case SOUTH -> (this.isLeft()) ? EAST : WEST;
+            case WEST -> (this.isLeft()) ? SOUTH : NORTH;
+        };
     }
 
 }
